@@ -1,0 +1,2 @@
+email		=> oculinadmin@test.com
+password 	=> 0culinAdmin#

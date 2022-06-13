@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +23,14 @@ Route::get('/', function() {
     return view('ocuweb2.index');
 });
 
-Route::get('/admin', function() {
-   return view('admin.index');
-});
+// Route::get('/admin', function() {
+//    return view('admin.index');
+// })->name('adminIndex');
 
-Route::get('/login', [AuthenticationController::class, 'login']);
+Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('isLoggedIn')->name('adminIndex');
+
+Route::get('/login', [AuthenticationController::class, 'login'])->middleware('alreadyLoggedIn');
+Route::post('/login-admin', [AuthenticationController::class, 'adminLogin'])->middleware('alreadyLoggedIn')->name('adminLogin');
+Route::get('/logout', [AuthenticationController::class, 'logout']);
+
+

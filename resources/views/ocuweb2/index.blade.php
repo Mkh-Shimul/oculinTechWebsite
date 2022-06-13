@@ -190,13 +190,13 @@
 {{--    </div>--}}
     <!--Default Background Section-->
     <section class="default-bg-section">
-        <div class="image-layer" style="background-image: url({{ url('webassets/images/background/stock-photo-green-space_6.jpg') }}); margin-top: -76px; height: 110%; !important;"></div>
+        <div class="image-layer" style="background-image: url({{ url('webassets/images/background/stock-photo-green-space_6.jpg') }}); margin-top: -80px; height: 130%; !important;"></div>
 
         <div class="auto-container">
             <div class="content-box">
-                <h2><strong>Our IT Solutions will get you on move towards your destination faster than rivals in a more reliably way!</strong></h2>
+                <h2>Deliver <strong>Innovative IT Solutions</strong> For Technology Insights</h2>
                 <div class="link-box">
-                    <a href="#" class="theme-btn btn-style-one"><div class="btn-title">Proven IT Solutions</div></a>
+                    <a href="#" class="theme-btn btn-style-one"><div class="btn-title">Explore More</div></a>
                 </div>
             </div>
         </div>

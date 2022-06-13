@@ -70,22 +70,34 @@
 
     <div class="content clearfix">
 
-        <form action="#" method="post">
+        <form action="{{ route('adminLogin') }}" method="post">
+            @csrf
 
             <h1>Admin Login</h1>
+
 
             <div class="login-fields">
 
                 <p>Please provide your details</p>
 
+                @if (Session::has('success'))
+                    <div class="alert alert-success">{{ Session::get('success') }}</div>
+                @endif
+
+                @if (Session::has('fail'))
+                    <div class="alert alert-danger">{{ Session::get('fail') }}</div>
+                @endif
+
                 <div class="field">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" value="" placeholder="Username" class="login username-field" />
+                    <label for="username">Email</label>
+                    <input type="text" id="username" name="email" value="{{ old('email') }}" placeholder="Email" class="login username-field" />
+                    <span class="text-danger">@error('email') {{ $message }} @enderror</span>
                 </div> <!-- /field -->
 
                 <div class="field">
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field"/>
+                    <span class="text-danger">@error('password') {{ $message }} @enderror</span>
                 </div> <!-- /password -->
 
             </div> <!-- /login-fields -->
